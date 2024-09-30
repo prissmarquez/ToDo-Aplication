@@ -25,11 +25,20 @@ class ToList extends StatelessWidget {
             //checkbox
            Checkbox(
             value: taskCompleted, 
-            onChanged: onChanged
+            onChanged: onChanged,
+            activeColor: Colors.black,
             ),
 
             //task name
-            Text(taskName),
+            Text(
+              taskName,
+              style: TextStyle(
+                color: Colors.blue,
+                decoration: taskCompleted
+                ? TextDecoration.lineThrough :
+                TextDecoration.none,
+              )
+              ),
           ],
         ),
         decoration: BoxDecoration(
