@@ -15,6 +15,8 @@ class _HomePageState extends State<HomePage> {
   
   //reference the hive box 
   final _myBox = Hive.box("mybox");
+  // List toDoList = [];
+  ToDoDataBase db = ToDoDataBase();
 
   //text controller
   final _controller = TextEditingController ();
@@ -25,8 +27,7 @@ class _HomePageState extends State<HomePage> {
   //   ["Do exercise", false ]
   // ];
 
-// List toDoList = [];
-  ToDoDataBase db = ToDoDataBase();
+
 
 @override
   void initState() {
