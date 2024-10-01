@@ -28,11 +28,28 @@ class _HomePageState extends State<HomePage> {
 // List toDoList = [];
   ToDoDataBase db = ToDoDataBase();
 
+@override
+  void initState() {
+
+    // if this is the first time ever opening the app, then create a default data
+    if (_myBox.get("TODOLIST") == null) {
+      db.createInitialData();
+    }
+    else {
+      //already exist data
+      db.loadata();
+    }
+
+    // TODO: implement initState
+    super.initState();
+  }
+
   //checkbox was tapped
   void checkboxChanged(bool? value, int index) {
     setState(() {
       db.toDoList[index] [1] = !db.toDoList [index] [1];
   });
+  db.updateDatabase();
   }
 
   //save a new task 
@@ -42,6 +59,7 @@ class _HomePageState extends State<HomePage> {
       _controller.clear();
     });
     Navigator.of(context).pop();
+    db.updateDatabase();
   }
 
   //create new task 
@@ -63,6 +81,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
     db.toDoList.removeAt(index);
   });
+  db.updateDatabase();
   }
 
   @override
