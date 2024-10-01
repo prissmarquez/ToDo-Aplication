@@ -27,6 +27,7 @@ class ToList extends StatelessWidget {
               onPressed: delateFuncion,
               icon: Icons.delete,
               backgroundColor: Colors.black,
+              borderRadius: BorderRadius.circular(12),
               )
           ]
           ),

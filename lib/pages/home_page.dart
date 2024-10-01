@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   });
   }
 
-  //savae a new task 
+  //save a new task 
   void saveNewTask (){
     setState(() {
       toDoList.add([_controller.text, false]);
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
           onSave:saveNewTask ,
           onCancel: () => Navigator.of(context).pop(),
         );
-      }
+      },
     );
   }
 
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
             taskName : toDoList[index] [0],
             taskCompleted : toDoList [index] [1],
             onChanged : (value) => checkboxChanged(value, index),
-            delateFuncion:(context) => deleteTask ,
+            delateFuncion:(context) => deleteTask (index) ,
           );
 
         },
