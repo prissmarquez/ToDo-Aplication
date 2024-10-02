@@ -47,7 +47,7 @@ class ToList extends StatelessWidget {
               Text(
                 taskName,
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: const Color.fromARGB(255, 0, 0, 0),
                   decoration: taskCompleted
                   ? TextDecoration.lineThrough :
                   TextDecoration.none,
@@ -56,7 +56,7 @@ class ToList extends StatelessWidget {
             ],
           ),
           decoration: BoxDecoration(
-            color: Colors.purple,
+            color: const Color.fromARGB(255, 99, 173, 194),
             borderRadius:BorderRadius.circular(12)
             ),
         ),
